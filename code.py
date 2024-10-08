@@ -46,14 +46,15 @@ user_full_address = "Morgan Iacolucci, 1653 21st Ave, Seattle, WA 98122"
 
 # Split the user input into lines for placement on the image
 user_address_lines = user_full_address.split(', ')
-user_address_text = "\n".join(user_address_lines)
+user_address_text = f"{'Morgan Iacolucci'}\n{'1653 21st ave'}\n{'Seattle'}, {'WA'} {'98122'}"
+#user_address_text = "\n".join(user_address_lines)
 
 img_width, img_height = 2031, 864 
 
 # Function to draw text on an image
 def draw_text(text, user_text, file_name, font_path):
     # Load a font
-    font_size = 50
+    font_size = 70
     font = ImageFont.truetype(font_path, font_size)  # Increased font size for better readability
     
     # Create a white background image
@@ -64,6 +65,7 @@ def draw_text(text, user_text, file_name, font_path):
     # Split text into lines
     lines = text.split('\n')
     user_lines = user_text.split('\n')
+    
     
     # Calculate the middle position for the main address
     max_line_width = 0
